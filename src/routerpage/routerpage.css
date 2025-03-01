@@ -102,3 +102,150 @@
     }
   }
   
+
+  /* Unique Class Names to Avoid Conflicts */
+.custom-slider-container {
+  padding: 10px;
+  font-family: var(--font1);
+  
+}
+
+.custom-slider-card {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.custom-slider-card-inner {
+  height: 200px; /* Fixed height */
+
+}
+
+@media (max-width: 768px) {
+  .custom-slider-card-inner {
+    height: 200px; /* Keep height consistent */
+  }
+}
+
+@media (max-width: 576px) {
+  .custom-slider-card-inner {
+    height: 200px; /* Keep height the same */
+  }
+}
+
+
+.custom-slider-card-inner {
+  border: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  position: relative; /* Needed for absolute positioning */
+  overflow: hidden; /* Prevents overflow of hover effects */
+}
+.custom-slider-card-inner {
+  border: 2px solid #007bff; /* Adds a border */
+  background: #f8f9fa; /* Light grey background */
+}
+
+/* Icon Styling */
+.custom-slider-icon {
+  font-size: 2.5rem;
+  color: #007bff;
+  position: relative;
+  z-index: 2;
+  transition: color 0.5s ease-in-out;
+}
+
+/* Title & Price Styling */
+.custom-slider-title {
+  font-weight: bold;
+  margin-top: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.custom-slider-price {
+  color: #555;
+  font-size: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Circular Hover Background Effect */
+.custom-slider-card-inner::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px; /* Small initial size */
+  height: 20px;
+  background: rgba(0, 123, 255, 0.3);
+  border-radius: 50%; /* Makes it a circle */
+  transform: translate(-50%, -50%) scale(0); /* Starts at the icon */
+  transition: transform 0.5s ease-in-out;
+  z-index: 1;
+}
+
+/* Underline Effect - Starts Small */
+.custom-slider-card-inner::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 4px;
+  background-color: #007bff;
+  transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+}
+
+/* Hover Effects */
+.custom-slider-card-inner:hover {
+  transform: translateY(-5px);
+}
+
+.custom-slider-card-inner:hover::before {
+  transform: translate(-50%, -50%) scale(42); /* Expands into a full-circle effect */
+}
+
+.custom-slider-card-inner:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Change Icon Color on Hover */
+.custom-slider-card-inner:hover .custom-slider-icon {
+  color: white;
+}
+
+
+
+.work .carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work .carousel-item-fixed {
+  min-height: 320px; /* Prevents height changes */
+  display: flex;
+  justify-content: center;
+  border-radius: 40px !important; /* Optional styling */
+
+}
+
+.work .carousel-image {
+  width: 600px; /* Fixed width */
+  height: 300px; /* Fixed height to avoid shifts */
+  object-fit: contain; /* Prevent stretching */
+  border-radius: 40px; /* Optional styling */
+}
+
+.work .carousel-control-prev,
+.work .carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease-in-out;
+}

@@ -72,7 +72,7 @@ const settings = {
   }, []);
   return (
     <div>
-      <div className="who-we-serve-section mt-5 mb-5" id="WhoWeServe" >
+      <div className="who-we-serve-section mb-5" id="WhoWeServe" >
                 <h2 className="text-center heading mb-5" data-aos="zoom-in" data-aos-duration="1050">
                     <span className="line"></span> WHY CHOOSE US <span className="line"></span>
                 </h2>
