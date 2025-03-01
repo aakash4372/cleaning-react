@@ -4,7 +4,6 @@ import { FaCouch, FaChair, FaBath, FaHome, FaWarehouse } from "react-icons/fa";
 import { GiFloorPolisher } from "react-icons/gi";
 import { HiHomeModern } from "react-icons/hi2";
 import { MdHomeWork } from "react-icons/md";
-import { Carousel, Container } from "react-bootstrap";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "bootstrap/dist/css/bootstrap.min.css";
