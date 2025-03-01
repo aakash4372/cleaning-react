@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react'
-import { Card } from 'react-bootstrap';
+import React, { useEffect } from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './aad.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import './aad.css'; // Ensure this file contains the flip card CSS
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -22,7 +23,7 @@ const services = [
     },
     {
         title: "Service 3",
-        content: "Service was awesome,I'm very happy and satisfied with their service. I recommend to my friends and family to take their service. So if you are looking for a cleaning service then call Chinna Cleaning and facility....",
+        content: "Service was awesome, I'm very happy and satisfied with their service. I recommend to my friends and family to take their service. So if you are looking for a cleaning service then call Chinna Cleaning and facility....",
         image: "/img/fan.jpg"
     }
 ];
@@ -37,46 +38,48 @@ const settings = {
         { breakpoint: 1024, settings: { slidesToShow: 2 } },
         { breakpoint: 800, settings: { slidesToShow: 1 } },
         { breakpoint: 700, settings: { slidesToShow: 1 } },
-        { breakpoint: 600, settings: { slidesToShow: 1 }, },
+        { breakpoint: 600, settings: { slidesToShow: 1 } },
     ],
+    centerMode: true, // Center the active slide
+    centerPadding: '0', // Remove extra padding
 };
 
 const ReviewSlider = () => {
+    useEffect(() => {
+        AOS.init();
+    }, []);
 
-      useEffect(() => {
-            AOS.init();
-          });
     return (
-        <div className="review-section py-5" id="WhoWeServe" style={{background:'#e8f9ff'}}>
+        <div className="review-section py-5" id="WhoWeServe" style={{ background: "linear-gradient(to top, #cde7f0, #cde7f0, #E8F9FF, white)" }}>
             <h2 className="text-center heading mb-5" data-aos="zoom-in" data-aos-duration="1050">
                 <span className="line"></span> Reviews<span className="line"></span>
             </h2>
 
-            <Slider {...settings} className="services container" >
+            <Slider {...settings} className="services container">
                 {services.map((service, index) => (
                     <div key={index} className="p-3" data-aos="fade-left" data-aos-duration="1050">
-                        <Card className="service-card text-center pt-4 flip-card">
+                        <div className="flip-card">
                             <div className="flip-card-inner">
+                                {/* Front Side */}
                                 <div className="flip-card-front">
-                                    <Card.Img variant="top" src={service.image} />
+                                    <img src={service.image} alt={service.title} className="card-image" />
                                 </div>
+                                {/* Back Side */}
                                 <div className="flip-card-back">
-                                    <Card.Body>
-                                        <p className="service-content text-dark">
-                                            <FaQuoteLeft size={24} className="text-primary me-2" />
-                                            {service.content}
-                                            <FaQuoteRight size={24} className="text-primary ms-2" />
-                                        </p>
-                                    </Card.Body>
+                                    <p className="service-content">
+                                        <FaQuoteLeft size={24} className="text-primary me-2" />
+                                        {service.content}
+                                        <FaQuoteRight size={24} className="text-primary ms-2" />
+                                    </p>
                                 </div>
                             </div>
-                        </Card>
+                        </div>
                     </div>
                 ))}
             </Slider>
 
             <div className="d-flex container justify-content-end mt-2 see-more pe-5">
-                <Link to="/services" className="see-more-link">See More</Link>
+                <Link to="/services" className="see-more-link">see more..</Link>
             </div>
         </div>
     );

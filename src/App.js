@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbarsection from './Page/Navbar';
 import Carousel from './Page/Carousel';
-import Aboutus from './Page/Aboutus';
+import Aboutus from './Page/Aboutus'; // Important for Bootstrap JS functionality
+
 
 export default function App() {
   return (

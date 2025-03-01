@@ -1,83 +1,85 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
-import "../App.css";
+import React, { useState, useEffect } from "react";
+import { Navbar, Nav, Offcanvas, Container } from "react-bootstrap";
+import { Link, NavLink } from "react-router-dom";
+import { FaHome, FaInfoCircle,FaBriefcase, FaPhone } from "react-icons/fa";
+import { MdCleanHands } from "react-icons/md";
+import { HiOutlineBars3BottomRight } from "react-icons/hi2";
 
-export default function Navbarsection() {
-    const [isScrolled, setIsScrolled] = useState(false);
+const MyOffcanvas = () => {
+  const [show, setShow] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 210) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 180) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
-        };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
+  return (
+    <>
 
-    return (
-        <div>
-            {/* Top Navbar */}
-            <div className="top-navtab d-none d-lg-block d-flex justify-content-end align-items-center">
-                <div className="d-flex justify-content-end align-items-center gap-3 me-4">
-                    <p className="mb-0">Coimbatore <span className="top-navtab-span">|</span></p>
-                    <p className="mb-0">Tirupur <span className="top-navtab-span">|</span></p>
-                    <p className="mb-0">Pollachi <span className="top-navtab-span">|</span></p>
-                    <p className="mb-0">Mettupalayam <span className="top-navtab-span">|</span></p>
-                    <p className="mb-0">Palakkad <span className="top-navtab-span">|</span></p>
-                    <p className="mb-0">Ooty</p>
-                </div>
-            </div>
+      {/* Main Navbar */}
+      <Navbar expand="lg" className={`bg-light shadow py-2 main-navbar ${isScrolled ? "fixed-top" : ""}`}>
+        <Container>
+          <Navbar.Brand as={Link} to="/" className="fw-bold">
+            <img
+              src={`${process.env.PUBLIC_URL}/logo/logo.jpg`}
+              alt="chinna-pic"
+              height="60"
+            />
+          </Navbar.Brand>
 
-            <div>
-                {/* Navbar */}
-                <nav className={`navbar navbar-expand-lg main-navbar ${isScrolled ? "fixed-nav" : ""}`}>
-                    <div className="container">
-                        <Link className="navbar-brand" to="/">
-                            <img src={`${process.env.PUBLIC_URL}/logo/logo.jpg`} alt="chinna-pic" height="40" />
-                        </Link>
+          {/* Desktop Navigation Links */}
+          <Nav className="mx-auto d-none gap-4 d-lg-flex">
+            <NavLink to="/" className={({ isActive }) => `nav-link mx-2 ${isActive ? "active-link" : ""}`}>Home</NavLink>
+            <NavLink to="/about" className={({ isActive }) => `nav-link mx-2 ${isActive ? "active-link" : ""}`}>About</NavLink>
+            <NavLink to="/services" className={({ isActive }) => `nav-link mx-2 ${isActive ? "active-link" : ""}`}>Services</NavLink>
+            <NavLink to="/our-work" className={({ isActive }) => `nav-link mx-2 ${isActive ? "active-link" : ""}`}>Our Work</NavLink>
+            <NavLink to="/contact" className={({ isActive }) => `nav-link mx-2 ${isActive ? "active-link" : ""}`}>Contact</NavLink>
+          </Nav>
 
-                        <button className="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
+          {/* Offcanvas Toggle Button for Mobile */}
+          <HiOutlineBars3BottomRight size={30} color="#227ec1" className="d-lg-none" onClick={handleShow} style={{ cursor: "pointer" }} />
+        </Container>
+      </Navbar>
 
-                        <div className="collapse navbar-collapse">
-                            <ul className="navbar-nav">
-                                <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
-                                <li className="nav-item"><Link className="nav-link" to="/about">About</Link></li>
-                                <li className="nav-item"><Link className="nav-link" to="/services">Services</Link></li>
-                                <li className="nav-item"><Link className="nav-link" to="/our-work">Our Work</Link></li>
-                                <li className="nav-item"><Link className="nav-link" to="/contact">Contact</Link></li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
+      {/* Offcanvas Menu for Mobile */}
+      <Offcanvas show={show} onHide={handleClose} placement="start" className="custom-offcanvas">
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title></Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          <Nav className="flex-column">
+            <NavLink to="/" className={({ isActive }) => `nav-link my-2 d-flex align-items-center ${isActive ? "active-link" : ""}`} onClick={handleClose}>
+              <FaHome className="me-2" /> Home
+            </NavLink>
+            <NavLink to="/about" className={({ isActive }) => `nav-link my-2 d-flex align-items-center ${isActive ? "active-link" : ""}`} onClick={handleClose}>
+              <FaInfoCircle className="me-2" /> About
+            </NavLink>
+            <NavLink to="/services" className={({ isActive }) => `nav-link my-2 d-flex align-items-center ${isActive ? "active-link" : ""}`} onClick={handleClose}>
+              <MdCleanHands className="me-2" /> Services
+            </NavLink>
+            <NavLink to="/our-work" className={({ isActive }) => `nav-link my-2 d-flex align-items-center ${isActive ? "active-link" : ""}`} onClick={handleClose}>
+              <FaBriefcase className="me-2" /> Our Work
+            </NavLink>
+            <NavLink to="/contact" className={({ isActive }) => `nav-link my-2 d-flex align-items-center ${isActive ? "active-link" : ""}`} onClick={handleClose}>
+              <FaPhone className="me-2" /> Contact
+            </NavLink>
+          </Nav>
+        </Offcanvas.Body>
+      </Offcanvas>
+    </>
+  );
+};
 
-                {/* Offcanvas Menu */}
-                <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div className="offcanvas-header">
-                        <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-                        <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div className="offcanvas-body">
-                        <ul className="navbar-nav">
-                            <li className="nav-item"><Link className="nav-link" to="/" >Home</Link></li>
-                            <li className="nav-item"><Link className="nav-link" to="/about" >About</Link></li>
-                            <li className="nav-item"><Link className="nav-link" to="/services" >Services</Link></li>
-                            <li className="nav-item"><Link className="nav-link" to="/our-work" >Our Work</Link></li>
-                            <li className="nav-item"><Link className="nav-link" to="/contact" >Contact</Link></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            
-        </div>
-    );
-}
+export default MyOffcanvas;
