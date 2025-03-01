@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+  --font1: "Jost", serif;
+  --primary-color: #227ec1;
+  --secondary-color: #0cb4d9;
+  --hover-bg: rgba(255, 255, 255, 0.1);
+}
+/* General Styles */
+.zig-layout .container {
+    padding: 20px;
+    
+  }
+  
+  .zig-layout {
+    margin-bottom: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-family: var(--font1);
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+
+  /* Image Styles */
+  .zig-layout img {
+    border-radius: 10px; /* Rounded corners for images */
+    transition: transform 0.4s cubic-bezier(0.25, 0.45, 0.45, 0.95), box-shadow 0.4s ease-in-out;
+    width: 100%;
+    height: auto;
+    border: 3px solid #608BC1; /* Light gold border */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .zig-layout img:hover {
+    transform: scale(1.15); /* Stronger zoom-in effect */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); /* More depth */
+  }
+  
+  /* Heading Styles */
+  .zig-layout h3 {
+    font-size: 28px; /* Larger heading size */
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #1a237e; /* Deep Blue */
+    margin-bottom: 15px;
+    text-align: left; /* Align heading to the left */
+  }
+  
+  /* Content Styles */
+  .zig-layout p {
+    font-size: 16px; /* Comfortable content size */
+    line-height: 1.6; /* Improved readability */
+    color: #444; /* Darker Gray for better contrast */
+    text-align: justify; /* Justify text for a clean look */
+  }
+  
+  
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .zig-layout {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .zig-layout {
+      flex-direction: column; /* Stack columns on smaller screens */
+      text-align: center; /* Center-align content on mobile */
+    }
+  
+    .zig-layout h3 {
+      font-size: 24px; /* Smaller heading for mobile */
+      text-align: center; /* Center-align heading */
+    }
+  
+    .zig-layout p {
+      font-size: 14px; /* Smaller content size for mobile */
+      text-align: center; /* Center-align content */
+    }
+  
+    .zig-layout img {
+      margin-bottom: 20px; /* Add space between image and text */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .zig-layout h3 {
+      font-size: 20px; /* Even smaller heading for very small screens */
+    }
+  
+    .zig-layout p {
+      font-size: 12px; /* Smaller content size for very small screens */
+    }
+  
+    .zig-layout .btn {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  }
+  

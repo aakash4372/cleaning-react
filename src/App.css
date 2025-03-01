@@ -290,26 +290,31 @@ html, body {
 }
 
 @media (max-width: 1200px) {
-  .who-we-are .heading {
-    font-size: 35px;
+  .heading {
+    font-size: 35px !important;
   }
 }
 
 @media (max-width: 992px) {
-  .who-we-are .heading {
-    font-size: 29px;
+  .heading {
+    font-size: 29px !important;
   }
 }
 
 @media (max-width: 768px) {
-  .who-we-are .heading {
+  .heading {
     font-size: 27px;
   }
 }
 
 @media (max-width: 576px) {
-  .who-we-are .heading {
-    font-size: 25px;
+  .heading {
+    font-size: 22px !important;
+  }
+}
+@media (max-width: 450px) {
+  .heading {
+    font-size: 20px !important;
   }
 }
 

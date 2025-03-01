@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import './aad.css'; // Ensure this file contains the flip card CSS
+import './page.css'; // Ensure this file contains the flip card CSS
 import AOS from "aos";
 import "aos/dist/aos.css";
 
