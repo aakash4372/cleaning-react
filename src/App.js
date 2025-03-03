@@ -6,6 +6,8 @@ import Aboutus from './Page/Aboutus';
 import ZigZagLayout from './routerpage/Service';
 import CustomSlider from './routerpage/Work';
 import Contact from './Page/Contact';
+import ScrollIndicator from './Page/Indicator';
+import ScrollToTop from './Page/top';
 
 const Layout = ({ children }) => (
   <>
@@ -17,6 +19,7 @@ const Layout = ({ children }) => (
 export default function App() {
   return (
     <Router>
+      <ScrollToTop/>
       <Routes>
         <Route path="/" element={<Layout><Carousel /></Layout>} />
         <Route path="/about" element={<Layout><Aboutus /></Layout>} />
@@ -24,6 +27,7 @@ export default function App() {
         <Route path="/our-work" element={<Layout><CustomSlider /></Layout>} />
         <Route path="/contact" element={<Contact/>} />
       </Routes>
+      <ScrollIndicator/>
     </Router>
   );
 }
