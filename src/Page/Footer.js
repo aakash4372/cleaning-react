@@ -52,8 +52,8 @@ export default function Footer() {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="/courses" className="text-white text-decoration-none">
-                                            Courses
+                                        <Link to="/our-work" className="text-white text-decoration-none">
+                                            Our Works
                                         </Link>
                                     </li>
                                 </ul>

@@ -149,7 +149,7 @@ export default function Carousel() {
 
                 <div className="d-flex see-more-line-header container justify-content-end mt-2 see-more pe-5">
                     <div className="d-flex see-more-line-header container justify-content-end mt-2 see-more pe-5">
-                        <Link to="/services" className="see-more-link">
+                        <Link to="/about" className="see-more-link">
                             See more.. <RiArrowRightDoubleFill className="see-more-icon" />
                         </Link>
                     </div>
