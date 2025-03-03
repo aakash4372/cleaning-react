@@ -521,6 +521,7 @@ html, body {
 
 .footer-section {
   background-color: #222;
+  font-family: var(--font1);
   /* Dark background */
   color: white;
 }

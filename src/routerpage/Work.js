@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./routerpage.css"; // Unique CSS file
+import ImageCard from "../Page/Imageslide";
 
 const cleaningServices = [
     { service: "Floor deep cleaning", price: "₹4 per sqft (about 3000 sqft)", icon: <GiFloorPolisher /> },
@@ -60,7 +61,9 @@ const CustomSlider = () => {
                     ))}
                 </Slider>
             </div>
-            
+            <div>
+                <ImageCard/>
+            </div>
         </div>
 
     );
