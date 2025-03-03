@@ -84,7 +84,10 @@ const ZigZagLayout = () => {
         AOS.init(); // Initialize AOS with a duration of 1000ms
     });
     return (
-        <div style={{ background: "linear-gradient(to bottom, #E8F9FF 0%, #E8F9FF 30%, white 50%, #E8F9FF 70%, #E8F9FF 100%)"}}>
+        <div style={{
+            background:
+                "linear-gradient(to bottom,rgb(195, 229, 241),rgb(241, 244, 245),rgb(178, 223, 240), white)",
+        }}>
             <div>
              <h2 className="text-center heading pt-5" data-aos="zoom-in" data-aos-duration="1050">
                 <span className="line"></span> Our Services<span className="line"></span>

@@ -12,26 +12,26 @@ html, body {
 }
 
 .custom-offcanvas {
-  width: 250px !important;
+  width: 350px !important;
   /* Adjust the width as needed */
 }
 
 @media (max-width: 768px) {
   .custom-offcanvas {
-    width: 220px !important;
+    width: 250px !important;
     /* Adjust for smaller screens */
   }
 }
 
 
-.navbar{
-  background-color: white !important;
+.main-navbar{
+  background-color: #EEF7FF !important;
   border-bottom-right-radius: 5px !important;
   border-bottom-left-radius: 5px !important;
 }
-.nav-link {
-  color: #5cbef7 !important;
-  font-size: 17px !important;
+.nav-link { 
+  color: #3795BD !important;
+  font-size: 19px !important;
   font-weight: 500 !important;
   font-family: var(--font1) !important;;
   position: relative !important;
@@ -46,8 +46,8 @@ html, body {
   left: 50% !important;
   bottom: 0 !important;
   width: 0 !important;
-  height: 2px !important;
-  background-color: var(--secondary-color) !important;;
+  height: 2.7px !important;
+  background-color: #19A7CE !important;;
   /* Change to your desired color */
   transition: width 0.3s ease-in-out, left 0.3s ease-in-out !important;;
 }
@@ -59,11 +59,11 @@ html, body {
 
 .nav-link:focus,
 .nav-link:active {
-  color: var(--secondary-color) !important;;
+  color: #088395 !important;;
 }
 
 .nav-link:hover {
-  color: var(--secondary-color) !important;;
+  color: #088395 !important;;
   /* Hover color */
 }
 
@@ -75,22 +75,35 @@ html, body {
 
 /* Center align Offcanvas links */
 
-.navbar-expand-lg {
-  min-height: 80px!important;;
-  background-color: white!important;;
-}
+
 
 .offcanvas-body {
   display: flex !important;
   flex-direction: column !important;;
 }
 
-/* Add gap between Offcanvas links */
 .offcanvas-body .nav-link {
-  padding: 10px 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 10px !important;
+  padding: 17px 29px !important;
   font-size: 18px !important;
-  /* Adjust size if needed */
 }
+
+
+@media (max-width: 768px) {
+  .navbar-brand img {
+    height: 40px !important; /* Adjust the size as needed */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand img {
+    height: 40px !important; /* Further reduce size for very small screens */
+  }
+}
+
 .offcanvas {
   background: rgba(158, 199, 244, 0.15) !important;;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;;
@@ -170,7 +183,7 @@ html, body {
   font-size: 3rem;
   font-weight: bold;
   color: white;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.678);
 }
 
 @media (max-width: 992px) {
@@ -199,7 +212,7 @@ html, body {
 .who-we-are .fw-bold{
   font-family: 'Roboto', sans-serif;
   font-size: 40px;
-  color: #58747b;
+  color: #005C78;
   text-align: start;
 }
 
@@ -322,6 +335,7 @@ html, body {
 .image-container {
   overflow: hidden;
   display: inline-block;
+  border: 2px solid #4D869C;
   border-radius: 10px;
   /* Optional: Rounded Corners */
 }
@@ -477,15 +491,25 @@ html, body {
   height: 100%;
 }
 .see-more-link {
-  font-size: 18px;
-  color: #007bff;
+  position: relative;
   text-decoration: none;
+  font-weight: bold;
+  color: #227ec1;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease-in-out;
 }
 
-
-.see-more-link:hover {
-  text-decoration: underline;
+.see-more-icon {
+  margin-left: 8px;
+  transition: transform 0.3s ease-in-out;
+  color: inherit;
 }
+
+.see-more-link:hover .see-more-icon {
+  transform: translateX(5px); /* Moves icon slightly to the right */
+}
+
 
 /* Responsive width & height adjustments */
 @media (max-width: 992px) {

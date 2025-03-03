@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Offcanvas, Container } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
-import { FaHome, FaInfoCircle,FaBriefcase, FaPhone } from "react-icons/fa";
+import { FaHome, FaInfoCircle, FaBriefcase, FaPhone } from "react-icons/fa";
 import { MdCleanHands } from "react-icons/md";
 import { HiOutlineBars3BottomRight } from "react-icons/hi2";
+import { motion } from "framer-motion"; // Import Framer Motion
 
 const MyOffcanvas = () => {
   const [show, setShow] = useState(false);
@@ -27,19 +28,13 @@ const MyOffcanvas = () => {
 
   return (
     <>
-
-      {/* Main Navbar */}
-      <Navbar expand="lg" className={`bg-light shadow py-2 main-navbar ${isScrolled ? "fixed-top" : ""}`}>
+      <Navbar expand="lg" className={`shadow py-2 main-navbar ${isScrolled ? "fixed-top" : ""}`}>
         <Container>
-          <Navbar.Brand as={Link} to="/" className="fw-bold">
-            <img
-              src={`${process.env.PUBLIC_URL}/logo/logo.jpg`}
-              alt="chinna-pic"
-              height="60"
-            />
+          <Navbar.Brand as={Link} to="/" className="fw-bold navbar-brand">
+            <img src={`${process.env.PUBLIC_URL}/logo/logo.jpg`} alt="chinna-pic" height="60" />
           </Navbar.Brand>
 
-          {/* Desktop Navigation Links */}
+
           <Nav className="mx-auto d-none gap-4 d-lg-flex">
             <NavLink to="/" className={({ isActive }) => `nav-link mx-2 ${isActive ? "active-link" : ""}`}>Home</NavLink>
             <NavLink to="/about" className={({ isActive }) => `nav-link mx-2 ${isActive ? "active-link" : ""}`}>About</NavLink>
@@ -48,12 +43,19 @@ const MyOffcanvas = () => {
             <NavLink to="/contact" className={({ isActive }) => `nav-link mx-2 ${isActive ? "active-link" : ""}`}>Contact</NavLink>
           </Nav>
 
-          {/* Offcanvas Toggle Button for Mobile */}
-          <HiOutlineBars3BottomRight size={30} color="#227ec1" className="d-lg-none" onClick={handleShow} style={{ cursor: "pointer" }} />
+          {/* Animated Offcanvas Toggle Button */}
+          <motion.div
+            whileHover={{ scale: 1.2, rotate: 10 }}
+            whileTap={{ scale: 0.9, rotate: -10 }}
+            onClick={handleShow}
+            className="d-lg-none"
+            style={{ cursor: "pointer" }}
+          >
+            <HiOutlineBars3BottomRight size={30} color="#227ec1" />
+          </motion.div>
         </Container>
       </Navbar>
 
-      {/* Offcanvas Menu for Mobile */}
       <Offcanvas show={show} onHide={handleClose} placement="start" className="custom-offcanvas">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title></Offcanvas.Title>

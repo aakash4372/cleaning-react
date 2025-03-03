@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './page.css'; // Ensure this file contains the flip card CSS
 import AOS from "aos";
+import { RiArrowRightDoubleFill } from "react-icons/ri";
 import "aos/dist/aos.css";
 
 const services = [
@@ -78,8 +79,12 @@ const ReviewSlider = () => {
                 ))}
             </Slider>
 
-            <div className="d-flex container justify-content-end mt-2 see-more pe-5">
-                <Link to="/services" className="see-more-link">see more..</Link>
+            <div className="d-flex see-more-line-header container justify-content-end mt-2 see-more pe-5">
+                <div className="d-flex see-more-line-header container justify-content-end mt-2 see-more pe-5">
+                    <Link to="/services" className="see-more-link">
+                        See more.. <RiArrowRightDoubleFill className="see-more-icon" />
+                    </Link>
+                </div>
             </div>
         </div>
     );

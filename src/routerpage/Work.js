@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import { FaCouch, FaChair, FaBath, FaHome, FaWarehouse } from "react-icons/fa";
 import { GiFloorPolisher } from "react-icons/gi";
@@ -9,6 +9,10 @@ import "slick-carousel/slick/slick-theme.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./routerpage.css"; // Unique CSS file
 import ImageCard from "../Page/Imageslide";
+import ReviewSlider from "../Page/Testimonial";
+import Footer from "../Page/Footer";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 const cleaningServices = [
     { service: "Floor deep cleaning", price: "₹4 per sqft (about 3000 sqft)", icon: <GiFloorPolisher /> },
@@ -21,9 +25,11 @@ const cleaningServices = [
     { service: "1BHK empty house cleaning", price: "₹4000", icon: <FaWarehouse /> },
 ];
 
-
-
 const CustomSlider = () => {
+    useEffect(() => {
+        AOS.init(); 
+    });
+
     const settings = {
         dots: false,
         infinite: true,
@@ -40,21 +46,20 @@ const CustomSlider = () => {
         ],
     };
 
-
     return (
         <div>
             <div>
-            <h2 className="text-center heading pt-5">
-                <span className="line"></span> Our Prices<span className="line"></span>
-            </h2>
+                <h2 className="text-center heading pt-5" data-aos='zoom-in' data-aos-duration="1050">
+                    <span className="line"></span> Our Prices<span className="line"></span>
+                </h2>
             </div>
             <div className="custom-slider-container container mt-5">
                 <Slider {...settings}>
                     {cleaningServices.map((item, index) => (
-                        <div key={index} className="custom-slider-card">
+                        <div key={index} className="custom-slider-card" data-aos='flip-left' data-aos-duration="1050">
                             <div className="custom-slider-card-inner text-center">
                                 <div className="custom-slider-icon">{item.icon}</div>
-                                <h5 className="custom-slider-title">{item.service}</h5>
+                                <h5 className="custom-slider-title" data-aos="fade-down">{item.service}</h5>
                                 <p className="custom-slider-price">{item.price}</p>
                             </div>
                         </div>
@@ -62,10 +67,15 @@ const CustomSlider = () => {
                 </Slider>
             </div>
             <div>
-                <ImageCard/>
+                <ImageCard />
+            </div>
+            <div>
+                <ReviewSlider />
+            </div>
+            <div className="mt-5">
+                <Footer />
             </div>
         </div>
-
     );
 };
 

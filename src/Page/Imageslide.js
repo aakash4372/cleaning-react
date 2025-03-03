@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import './page.css';
+import './page.css';import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS styles
 
 const images = [
     { before: "/photos/room1.jpg", after: "/photos/room2.jpg" },
@@ -19,15 +20,18 @@ const images = [
 ];
 
 const ImageCard = () => {
+    useEffect(() => {
+        AOS.init(); 
+    });
     return (
         <div>
-            <h2 className="text-center heading pt-5">
-                <span className="line"></span> Our Cleaning Projects <span className="line"></span>
+            <h2 className="text-center heading pt-5 pb-5" data-aos='zoom-in' data-aos-duration="1050">
+                <span className="line"></span> Our Works<span className="line"></span>
             </h2>
-            <Container className="image-card-container">
+            <Container className="image-card-container mt-5 ">
                 <Row>
                     {images.map((image, index) => (
-                        <Col lg={4} md={6} sm={12} key={index} className="mb-4">
+                        <Col lg={4} md={6} sm={12} key={index} className="mb-4" data-aos='zoom-in' data-aos-duration="1050">
                             <Card className="image-card">
                                 <div className="image-wrapper">
                                     <Card.Img className="before" variant="top" src={image.before} alt={`Before Image ${index + 1}`} />

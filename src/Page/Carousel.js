@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { RiArrowRightDoubleFill } from "react-icons/ri";
 import ReviewSlider from './review';
 import Footer from './Footer';
 
@@ -147,14 +148,16 @@ export default function Carousel() {
                 </Slider>
 
                 <div className="d-flex see-more-line-header container justify-content-end mt-2 see-more pe-5">
-                    <Link to="/services" className="see-more-link">
-                        see more..
-                    </Link>
+                    <div className="d-flex see-more-line-header container justify-content-end mt-2 see-more pe-5">
+                        <Link to="/services" className="see-more-link">
+                            See more.. <RiArrowRightDoubleFill className="see-more-icon" />
+                        </Link>
+                    </div>
                 </div>
             </div>
 
             <ReviewSlider />
-            <Footer/>
+            <Footer />
 
 
 
