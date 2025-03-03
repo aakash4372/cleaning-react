@@ -27,13 +27,14 @@ const ScrollToTop = () => {
 
       {/* WhatsApp Floating Icon (Below Scroll-to-Top) */}
       <a 
-        href="https://wa.me/+91 9788525856" 
-        className="whatsapp-icon" 
-        target="_blank" 
-        rel="noopener noreferrer"
-      >
-        <FaWhatsapp className="whatsapp" />
-      </a>
+  href="https://wa.me/919788525856" 
+  className="whatsapp-icon" 
+  target="_blank" 
+  rel="noopener noreferrer"
+>
+  <FaWhatsapp className="whatsapp" />
+</a>
+
     </>
   );
 };
