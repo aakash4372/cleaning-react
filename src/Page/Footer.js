@@ -16,11 +16,11 @@ export default function Footer() {
                         <Row className="gap-4 gap-md-0">
                             <Col
                                 md={3}
-                                className="text-start text-white d-flex flex-column align-items-start mb-4 mb-md-0"
+                                className="text-start text-dark d-flex flex-column align-items-start mb-4 mb-md-0"
                             >
                                 <div className="logo-circle">
                                     <img
-                                        src={`${process.env.PUBLIC_URL}/img/logo.jpg`}
+                                        src={`${process.env.PUBLIC_URL}/logo/logo.jpg`}
                                         alt="Logo"
                                         className="footer-logo"
                                     />
@@ -33,42 +33,42 @@ export default function Footer() {
                                     all.
                                 </p>
                             </Col>
-                            <Col md={3} className="text-start text-white mb-4 mb-md-0">
+                            <Col md={3} className="text-start text-dark mb-4 mb-md-0">
                                 <h5 className="footer-heading">Useful Links</h5>
                                 <ul className="list-unstyled d-flex flex-column gap-3 align-items-start">
                                     <li>
-                                        <Link to="/" className="text-white text-decoration-none">
+                                        <Link to="/" className="text-dark text-decoration-none">
                                             Home
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="/about" className="text-white text-decoration-none">
+                                        <Link to="/about" className="text-dark text-decoration-none">
                                             About
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="/services" className="text-white text-decoration-none">
+                                        <Link to="/services" className="text-dark text-decoration-none">
                                             Services
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to="/our-work" className="text-white text-decoration-none">
+                                        <Link to="/our-work" className="text-dark text-decoration-none">
                                             Our Works
                                         </Link>
                                     </li>
                                 </ul>
                             </Col>
-                            <Col md={3} className="text-start text-white">
+                            <Col md={3} className="text-start text-dark">
                                 <h5 className="footer-heading">Contact Us</h5>
 
                                 {/* Phone */}
                                 <p className="d-flex align-items-center justify-text">
                                     <FaPhone className="me-2 calls flex-shrink-0" />
                                     <a
-                                        href="tel:+919788525856"
-                                        className="text-white ps-1 text-decoration-none"
+                                        href="tel:+9104224368813"
+                                        className="text-dark ps-1 text-decoration-none"
                                     >
-                                        +91 9788525856
+                                        04224368813
                                     </a>
                                 </p>
 
@@ -77,7 +77,7 @@ export default function Footer() {
                                     <FaEnvelope className="me-2 flex-shrink-0" />
                                     <a
                                         href="mailto:chinnaclgfacility@gmail.com"
-                                        className="text-white ps-2 text-decoration-none"
+                                        className="text-dark ps-2 text-decoration-none"
                                     >
                                         chinnaclgfacility@gmail.com
                                     </a>
@@ -100,7 +100,7 @@ export default function Footer() {
                                 </p>
                             </Col>
 
-                            <Col md={3} className="text-start text-white">
+                            <Col md={3} className="text-start text-dark">
                                 <h5 className="footer-heading">Follow Us</h5>
                                 <div className="social-icons d-flex gap-3">
                                     <a
@@ -108,7 +108,7 @@ export default function Footer() {
                                         target="_blank"
                                         without
                                         rel="noreferrer"
-                                        className="text-white"
+                                        className="text-dark"
                                     >
                                         <img
                                             src={`${process.env.PUBLIC_URL}/logo/instagram.png`}
@@ -122,7 +122,7 @@ export default function Footer() {
                                         target="_blank"
                                         without
                                         rel="noreferrer"
-                                        className="text-white"
+                                        className="text-dark"
                                     >
                                         <img
                                             src={`${process.env.PUBLIC_URL}/logo/facebook.png`}
@@ -139,7 +139,7 @@ export default function Footer() {
                                         target="_blank"
                                         without
                                         rel="noreferrer"
-                                        className="text-white"
+                                        className="text-dark"
                                     >
                                         <img
                                             src={`${process.env.PUBLIC_URL}/logo/youtube.png`}
@@ -153,7 +153,7 @@ export default function Footer() {
                         </Row>
                         <hr />
                         <Row className="mt-4">
-                            <Col className="text-center text-white">
+                            <Col className="text-center text-dark">
                                 <p className="mb-0">
                                     &copy; {new Date().getFullYear()}
                                     <a
@@ -161,7 +161,7 @@ export default function Footer() {
                                         target="_blank"
                                         without
                                         rel="noreferrer"
-                                        className="text-white text-decoration-none ms-1"
+                                        className="text-dark text-decoration-none ms-1"
                                     >
                                         BMTECHx
                                     </a>

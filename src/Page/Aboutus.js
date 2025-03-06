@@ -5,7 +5,7 @@ import Footer from './Footer'
 export default function Aboutus() {
   return (
     <div style={{
-      background: "linear-gradient(to bottom, #E8F9FF 0%, #E8F9FF 30%, white 50%, #E8F9FF 70%, #E8F9FF 100%)"
+      background: "linear-gradient(to bottom, #E8F9FF 0%, #E8F9FF 30%, white 50%,rgba(232, 249, 255, 0) 70%,rgba(2, 7, 8, 0))"
     }}
     >
       <div>

@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import './page.css';import AOS from "aos";
-import "aos/dist/aos.css"; // Import AOS styles
+import './page.css';
+import AOS from "aos";
+import "aos/dist/aos.css"; 
 
 const images = [
     { before: "/photos/room1.jpg", after: "/photos/room2.jpg" },
@@ -16,33 +17,49 @@ const images = [
     { before: "/photos/wood1.jpg", after: "/photos/wood2.jpg" },
     { before: "/photos/fan1.jpg", after: "/photos/fan2.jpg" },
     { before: "/photos/chruch1.jpg", after: "/photos/chruch2.jpg" },
-    
 ];
 
 const ImageCard = () => {
     useEffect(() => {
         AOS.init(); 
-    });
+    }, []);
+
     return (
         <div>
             <h2 className="text-center heading pt-5 pb-5" data-aos='zoom-in' data-aos-duration="1050">
                 <span className="line"></span> Our Works<span className="line"></span>
             </h2>
-            <Container className="image-card-container mt-5 ">
+            <Container className="image-card-container mt-5">
                 <Row>
                     {images.map((image, index) => (
                         <Col lg={4} md={6} sm={12} key={index} className="mb-4" data-aos='zoom-in' data-aos-duration="1050">
-                            <Card className="image-card">
-                                <div className="image-wrapper">
-                                    <Card.Img className="before" variant="top" src={image.before} alt={`Before Image ${index + 1}`} />
-                                    <Card.Img className="after" variant="top" src={image.after} alt={`After Image ${index + 1}`} />
-                                </div>
-                            </Card>
+                            <ImageSlider before={image.before} after={image.after} />
                         </Col>
                     ))}
                 </Row>
             </Container>
         </div>
+    );
+};
+
+const ImageSlider = ({ before, after }) => {
+    const [showAfter, setShowAfter] = useState(false);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setShowAfter((prev) => !prev); // Toggle between before & after images
+        }, 3000); // Switch every 3 seconds
+
+        return () => clearInterval(interval); // Cleanup on unmount
+    }, []);
+
+    return (
+        <Card className="image-card">
+            <div className="image-wrapper">
+                <Card.Img className={`image ${showAfter ? "hidden" : "visible"}`} variant="top" src={before} alt="Before" />
+                <Card.Img className={`image ${showAfter ? "visible" : "hidden"}`} variant="top" src={after} alt="After" />
+            </div>
+        </Card>
     );
 };
 

@@ -15,17 +15,17 @@ const services = [
     {
         title: "Service 1",
         content: "Chinna cleaning did a wonderful service. It was a 3 bhk empty house and they made all the nook and corner very clean and shine. Very professional and budget friendly. I would recommend them for sure.",
-        image: "/img/toilet.jpg"
+        image: "/img/office1.jpg"
     },
     {
         title: "Service 2",
         content: "Chinna House Cleaning did an excellent job with our home! They were professional, and thorough, leaving every corner spotless. Highly recommended for anyone looking for reliable and affordable cleaning services.",
-        image: "/img/sink.jpg"
+        image: "/img/office2.jpg"
     },
     {
         title: "Service 3",
         content: "Service was awesome, I'm very happy and satisfied with their service. I recommend to my friends and family to take their service. So if you are looking for a cleaning service then call Chinna Cleaning and facility....",
-        image: "/img/fan.jpg"
+        image: "/img/sofa1.jpg"
     }
 ];
 
@@ -51,7 +51,7 @@ const ReviewSlider = () => {
     }, []);
 
     return (
-        <div className="review-section py-5" id="WhoWeServe" style={{ background: "linear-gradient(to top, #cde7f0, #cde7f0, #E8F9FF, white)" }}>
+        <div className="review-section py-5" id="WhoWeServe">
             <h2 className="text-center heading mb-5" data-aos="zoom-in" data-aos-duration="1050">
                 <span className="line"></span> Reviews<span className="line"></span>
             </h2>

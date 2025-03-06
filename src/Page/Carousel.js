@@ -12,6 +12,7 @@ import "aos/dist/aos.css";
 import { RiArrowRightDoubleFill } from "react-icons/ri";
 import ReviewSlider from './review';
 import Footer from './Footer';
+import Statistics from './Compnycount';
 
 export default function Carousel() {
     useEffect(() => {
@@ -66,7 +67,7 @@ export default function Carousel() {
 
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src={`${process.env.PUBLIC_URL}/img/medium-shot-people-cleaning-building.jpg`} className="d-block w-100" alt="..." />
+                        <img src={`${process.env.PUBLIC_URL}/img/professional-cleaning-service-people-working-together-office.jpg`} className="d-block w-100" alt="..." />
                         <div className="carousel-caption">
                             <h2>Welcome to Chinna Cleaning Facility</h2>
                         </div>
@@ -78,7 +79,7 @@ export default function Carousel() {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <img src={`${process.env.PUBLIC_URL}/img/person-taking-care-office-cleaning (1).jpg`} className="d-block w-100" alt="..." />
+                        <img src={`${process.env.PUBLIC_URL}/img/Firefly 20250306152236.png`} className="d-block w-100" alt="..." />
                         <div className="carousel-caption">
                             <h2>Welcome to Chinna Cleaning Facility</h2>
                         </div>
@@ -131,7 +132,9 @@ export default function Carousel() {
                 </div>
             </div>
 
-            <div className="who-we-serve-section mb-3" id="WhoWeServe">
+            <Statistics/>
+
+            <div className="who-we-serve-section pt-5 mb-3" id="WhoWeServe" style={{ background: "linear-gradient(to bottom,rgb(205, 231, 240),rgb(205, 231, 240),rgba(205, 231, 240, 0.51),rgba(205, 231, 240, 0.47),rgba(205, 231, 240, 0))" }}>
                 <h2 className="text-center heading mb-5" data-aos="zoom-in" data-aos-duration="1050">
                     <span className="line"></span> WHY CHOOSE US<span className="line"></span>
                 </h2>

@@ -38,7 +38,7 @@ const data = [
     {
         id: 5,
         img: "/img/sofa-cleaning.jpg",
-        extraImg: "/img/sofa.jpg",
+        extraImg: "/photos/sofa.jpg",
         title: "Sofa Cleaning",
         text: "Your sofa accumulates dust, stains, and allergens over time. Our expert sofa cleaning service uses deep extraction methods and shampoos to restore freshness and remove bacteria, ensuring a clean and comfortable seating experience.",
     },
@@ -52,7 +52,7 @@ const data = [
     {
         id: 7,
         img: "/img/carpet-cleaning.jpg",
-        extraImg: "/img/mat.jpg",
+        extraImg: "/photos/carpet.avif",
         title: "Carpet Shampoo Cleaning",
         text: "Carpets trap dirt, dust, and allergens that can affect air quality. Our professional carpet shampoo cleaning service effectively removes deep-seated dirt, stains, and odors, restoring the beauty and freshness of your carpets while extending their lifespan",
     },
@@ -66,7 +66,7 @@ const data = [
     {
         id: 9,
         img: "/img/glass-cleaning.jpg",
-        extraImg: "/img/glass.jpg",
+        extraImg: "/photos/glass.png",
         title: "Glass Cleaning",
         text: "Smudges and dust on glass surfaces impair visibility and aesthetics. Our glass cleaning service provides spotless, streak-free windows, mirrors, and glass partitions, enhancing the overall appearance of your home or office.",
     },
@@ -77,6 +77,13 @@ const data = [
         title: "Kitchen Cleaning",
         text: "The kitchen is the heart of every home and one of the most challenging areas to clean. Our kitchen cleaning service eliminates grease, food stains, and bacteria from countertops, cabinets, stoves, and appliances, ensuring a hygienic cooking space.",
     },
+    {
+        id: 10,
+        img: "/img/kitchen-cleaning.jpg",
+        extraImg: "/photos/house.avif",
+        title: "House cleaning",
+        text: "House cleaning keeps your home tidy, organized, and hygienic by removing dust, dirt, and clutter. Regular cleaning enhances comfort, improves indoor air quality, and prevents the spread of germs. A well-maintained home creates a refreshing and welcoming environment for everyone.",
+    },
 ];
 
 const ZigZagLayout = () => {
@@ -86,7 +93,7 @@ const ZigZagLayout = () => {
     return (
         <div style={{
             background:
-                "linear-gradient(to bottom,rgb(195, 229, 241),rgb(241, 244, 245),rgb(178, 223, 240), white)",
+                "linear-gradient(to bottom,rgb(195, 229, 241),rgb(241, 244, 245),rgba(178, 223, 240, 0), white)",
         }}>
             <div>
              <h2 className="text-center heading pt-5" data-aos="zoom-in" data-aos-duration="1050">

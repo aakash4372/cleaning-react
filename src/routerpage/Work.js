@@ -50,7 +50,7 @@ const CustomSlider = () => {
         <div>
             <div>
                 <h2 className="text-center heading pt-5" data-aos='zoom-in' data-aos-duration="1050">
-                    <span className="line"></span> Our Prices<span className="line"></span>
+                    <span className="line"></span> OUR APPROX PRIZE<span className="line"></span>
                 </h2>
             </div>
             <div className="custom-slider-container container mt-5">
