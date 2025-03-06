@@ -67,22 +67,15 @@ export default function Carousel() {
 
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src={`${process.env.PUBLIC_URL}/img/professional-cleaning-service-people-working-together-office.jpg`} className="d-block w-100" alt="..." />
-                        <div className="carousel-caption">
-                            <h2>Welcome to Chinna Cleaning Facility</h2>
-                        </div>
+                        <img src={`${process.env.PUBLIC_URL}/img/c1.png`} className="d-block w-100" alt="..." />
                     </div>
                     <div className="carousel-item">
-                        <img src={`${process.env.PUBLIC_URL}/img/medium-shot-woman-cleaning-home.jpg`} className="d-block w-100" alt="..." />
-                        <div className="carousel-caption">
-                            <h2>Welcome to Chinna Cleaning Facility</h2>
-                        </div>
+                        <img src={`${process.env.PUBLIC_URL}/img/c2.png`} className="d-block w-100" alt="..." />
+                        
                     </div>
                     <div className="carousel-item">
-                        <img src={`${process.env.PUBLIC_URL}/img/Firefly 20250306152236.png`} className="d-block w-100" alt="..." />
-                        <div className="carousel-caption">
-                            <h2>Welcome to Chinna Cleaning Facility</h2>
-                        </div>
+                        <img src={`${process.env.PUBLIC_URL}/img/c3.png`} className="d-block w-100" alt="..." />
+                        
                     </div>
                 </div>
             </div>

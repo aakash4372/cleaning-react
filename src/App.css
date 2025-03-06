@@ -764,3 +764,23 @@ hr {
   color: #1F509A !important;
   font-weight: 600 !important;
 }
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* Adjust the width */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #eef7ff; /* Background color */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a3cbe7; /* Scrollbar color */
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #7fb3d5; /* Darker shade when hovered */
+}
