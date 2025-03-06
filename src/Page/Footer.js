@@ -13,9 +13,9 @@ export default function Footer() {
                     id="contact"
                 >
                     <Container>
-                        <Row className="gap-4 gap-md-0">
+                        <Row className="d-flex flex-column flex-md-row gap-4 gap-md-0">
                             <Col
-                                md={3}
+                                md={4}
                                 className="text-start text-dark d-flex flex-column align-items-start mb-4 mb-md-0"
                             >
                                 <div className="logo-circle">
@@ -25,83 +25,13 @@ export default function Footer() {
                                         className="footer-logo"
                                     />
                                 </div>
-                                <p className="text-start mt-3">
+                                <p className="text-start mt-3 text-wrap" style={{ textAlign: "justify" }}>
                                     China Cleaning Facility ensures a clean, hygienic environment
                                     with 11 years of expertise, offering reliable residential,
                                     office, and commercial cleaning services. We prioritize
                                     professionalism and safety, creating welcoming spaces for
                                     all.
                                 </p>
-                            </Col>
-                            <Col md={3} className="text-start text-dark mb-4 mb-md-0">
-                                <h5 className="footer-heading">Useful Links</h5>
-                                <ul className="list-unstyled d-flex flex-column gap-3 align-items-start">
-                                    <li>
-                                        <Link to="/" className="text-dark text-decoration-none">
-                                            Home
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/about" className="text-dark text-decoration-none">
-                                            About
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/services" className="text-dark text-decoration-none">
-                                            Services
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/our-work" className="text-dark text-decoration-none">
-                                            Our Works
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </Col>
-                            <Col md={3} className="text-start text-dark">
-                                <h5 className="footer-heading">Contact Us</h5>
-
-                                {/* Phone */}
-                                <p className="d-flex align-items-center justify-text">
-                                    <FaPhone className="me-2 calls flex-shrink-0" />
-                                    <a
-                                        href="tel:+9104224368813"
-                                        className="text-dark ps-1 text-decoration-none"
-                                    >
-                                        04224368813
-                                    </a>
-                                </p>
-
-                                {/* Email */}
-                                <p className="d-flex align-items-center justify-text">
-                                    <FaEnvelope className="me-2 flex-shrink-0" />
-                                    <a
-                                        href="mailto:chinnaclgfacility@gmail.com"
-                                        className="text-dark ps-2 text-decoration-none"
-                                    >
-                                        chinnaclgfacility@gmail.com
-                                    </a>
-                                </p>
-
-                                {/* Address */}
-                                <p className="d-flex align-items-start justify-text">
-                                    <FaMapMarkerAlt className="me-2 flex-shrink-0 mt-1" />
-                                    <span className="ps-2">
-                                        No 204 Maruthakutti street, Rathinapuri, Coimbatore - 641027
-                                    </span>
-                                </p>
-
-                                <p className="d-flex align-items-start justify-text">
-                                    <FaSearchLocation className="me-2 flex-shrink-0 mt-1" />
-                                    <span className="ps-2">
-                                        Coimbatore, Tirupur, Pollachi, Mettupalayam, Coimbatore,
-                                        Palakkad, Ooty
-                                    </span>
-                                </p>
-                            </Col>
-
-                            <Col md={3} className="text-start text-dark">
-                                <h5 className="footer-heading">Follow Us</h5>
                                 <div className="social-icons d-flex gap-3">
                                     <a
                                         href="https://www.instagram.com/chinna_cleaning_facility?igsh=dWR2MTd1OG9yN3Bq"
@@ -149,6 +79,73 @@ export default function Footer() {
                                         />
                                     </a>
                                 </div>
+                            </Col>
+                            <Col md={4} className="text-dark mb-4 mb-md-0 d-flex flex-column align-items-start align-items-lg-center">
+                                <h5 className="footer-heading">Useful Links</h5>
+                                <ul className="list-unstyled d-flex flex-column gap-3 text-start text-lg-center">
+                                    <li>
+                                        <Link to="/" className="text-dark text-decoration-none">
+                                            Home
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/about" className="text-dark text-decoration-none">
+                                            About
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/services" className="text-dark text-decoration-none">
+                                            Services
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/our-work" className="text-dark text-decoration-none">
+                                            Our Works
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </Col>
+
+                            <Col md={4} className="text-start text-dark">
+                                <h5 className="footer-heading">Contact Us</h5>
+
+                                {/* Phone */}
+                                <p className="d-flex align-items-center justify-text">
+                                    <FaPhone className="me-2 calls flex-shrink-0" />
+                                    <a
+                                        href="tel:+9104224368813"
+                                        className="text-dark ps-1 text-decoration-none"
+                                    >
+                                        04224368813
+                                    </a>
+                                </p>
+
+                                {/* Email */}
+                                <p className="d-flex align-items-center justify-text">
+                                    <FaEnvelope className="me-2 flex-shrink-0" />
+                                    <a
+                                        href="mailto:chinnaclgfacility@gmail.com"
+                                        className="text-dark ps-2 text-decoration-none"
+                                    >
+                                        chinnaclgfacility@gmail.com
+                                    </a>
+                                </p>
+
+                                {/* Address */}
+                                <p className="d-flex align-items-start justify-text">
+                                    <FaMapMarkerAlt className="me-2 flex-shrink-0 mt-1" />
+                                    <span className="ps-2">
+                                        No 204 Maruthakutti street, Rathinapuri, Coimbatore - 641027
+                                    </span>
+                                </p>
+
+                                <p className="d-flex align-items-start justify-text">
+                                    <FaSearchLocation className="me-2 flex-shrink-0 mt-1" />
+                                    <span className="ps-2">
+                                        Coimbatore, Tirupur, Pollachi, Mettupalayam, Coimbatore,
+                                        Palakkad, Ooty
+                                    </span>
+                                </p>
                             </Col>
                         </Row>
                         <hr />
