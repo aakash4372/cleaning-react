@@ -1,24 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { Navbar, Nav, Offcanvas, Container, Dropdown } from "react-bootstrap";
+import { Navbar, Nav, Offcanvas, Container, Dropdown, Button } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import { FaHome, FaInfoCircle, FaBriefcase, FaPhone } from "react-icons/fa";
 import { MdCleanHands } from "react-icons/md";
 import { HiOutlineBars3BottomRight } from "react-icons/hi2";
-import { motion } from "framer-motion"; // Import Framer Motion
+import { motion } from "framer-motion";
 import { FaPhoneAlt } from "react-icons/fa";
 import { TbDeviceLandlinePhone } from "react-icons/tb";
+import EnquiryModal from "./EnquiryModal"; // Import Modal
 
 const MyOffcanvas = () => {
   const [show, setShow] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [modalShow, setModalShow] = useState(false); // State for Modal
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 210) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 210);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -33,15 +31,10 @@ const MyOffcanvas = () => {
       <div className="navtab-container text-white d-none d-md-block px-3 py-2 d-flex align-items-center text-end">
         <FaPhoneAlt className="me-2 text-light" />
         <span className="text-light me-2">For enquiry -</span>
-        <a href="tel:+914224368813" className="enquiry-link text-light me-2">
-          +91 422 436 8813
-        </a>
-        /
         <a href="tel:+919788525856" className="enquiry-link text-light ms-2">
           +91 978 852 5856
         </a>
       </div>
-
 
       <Navbar expand="lg">
         <Container>
@@ -56,47 +49,41 @@ const MyOffcanvas = () => {
           <Nav className="ms-auto d-none d-lg-flex">
             <NavLink
               to="/"
-              className={({ isActive }) =>
-                `nav-link mx-2 ${isActive ? "active-link" : ""}`
-              }
+              className={({ isActive }) => `nav-link mx-2 ${isActive ? "active-link" : ""}`}
             >
               Home
             </NavLink>
             <NavLink
               to="/about"
-              className={({ isActive }) =>
-                `nav-link mx-2 ${isActive ? "active-link" : ""}`
-              }
+              className={({ isActive }) => `nav-link mx-2 ${isActive ? "active-link" : ""}`}
             >
               About
             </NavLink>
             <NavLink
               to="/services"
-              className={({ isActive }) =>
-                `nav-link mx-2 ${isActive ? "active-link" : ""}`
-              }
+              className={({ isActive }) => `nav-link mx-2 ${isActive ? "active-link" : ""}`}
             >
               Services
             </NavLink>
             <NavLink
               to="/our-work"
-              className={({ isActive }) =>
-                `nav-link mx-2 ${isActive ? "active-link" : ""}`
-              }
+              className={({ isActive }) => `nav-link mx-2 ${isActive ? "active-link" : ""}`}
             >
               Our Work
             </NavLink>
             <NavLink
               to="/contact"
-              className={({ isActive }) =>
-                `nav-link mx-2 ${isActive ? "active-link" : ""}`
-              }
+              className={({ isActive }) => `nav-link mx-2 ${isActive ? "active-link" : ""}`}
             >
               Contact
             </NavLink>
+
+            {/* Button to Open Modal */}
+            <Button variant="outline-primary" className="mx-2" onClick={() => setModalShow(true)}>
+              Enquiry
+            </Button>
           </Nav>
 
-          {/* Animated Offcanvas Toggle Button */}
           <motion.div
             whileHover={{ scale: 1.2, rotate: 10 }}
             whileTap={{ scale: 0.9, rotate: -10 }}
@@ -115,53 +102,21 @@ const MyOffcanvas = () => {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Nav className="flex-column">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                `nav-link my-2 d-flex align-items-center ${isActive ? "active-link" : ""}`
-              }
-              onClick={handleClose}
-            >
+            <NavLink to="/" className="nav-link my-2 d-flex align-items-center" onClick={handleClose}>
               <FaHome className="me-2" /> Home
             </NavLink>
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                `nav-link my-2 d-flex align-items-center ${isActive ? "active-link" : ""}`
-              }
-              onClick={handleClose}
-            >
+            <NavLink to="/about" className="nav-link my-2 d-flex align-items-center" onClick={handleClose}>
               <FaInfoCircle className="me-2" /> About
             </NavLink>
-            <NavLink
-              to="/services"
-              className={({ isActive }) =>
-                `nav-link my-2 d-flex align-items-center ${isActive ? "active-link" : ""}`
-              }
-              onClick={handleClose}
-            >
+            <NavLink to="/services" className="nav-link my-2 d-flex align-items-center" onClick={handleClose}>
               <MdCleanHands className="me-2" /> Services
             </NavLink>
-            <NavLink
-              to="/our-work"
-              className={({ isActive }) =>
-                `nav-link my-2 d-flex align-items-center ${isActive ? "active-link" : ""}`
-              }
-              onClick={handleClose}
-            >
+            <NavLink to="/our-work" className="nav-link my-2 d-flex align-items-center" onClick={handleClose}>
               <FaBriefcase className="me-2" /> Our Work
             </NavLink>
-            <NavLink
-              to="/contact"
-              className={({ isActive }) =>
-                `nav-link my-2 d-flex align-items-center ${isActive ? "active-link" : ""}`
-              }
-              onClick={handleClose}
-            >
+            <NavLink to="/contact" className="nav-link my-2 d-flex align-items-center" onClick={handleClose}>
               <FaPhone className="me-2" /> Contact
             </NavLink>
-
-            {/* Enquiry Links in Offcanvas */}
             <Dropdown className="my-2">
               <Dropdown.Toggle
                 variant="link"
@@ -180,10 +135,16 @@ const MyOffcanvas = () => {
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
-
+            {/* Enquiry Button in Offcanvas */}
+            <Button variant="outline-primary" className="mt-3 w-100" onClick={() => setModalShow(true)}>
+              Enquiry
+            </Button>
           </Nav>
         </Offcanvas.Body>
       </Offcanvas>
+
+      {/* Enquiry Modal */}
+      <EnquiryModal show={modalShow} handleClose={() => setModalShow(false)} />
     </div>
   );
 };

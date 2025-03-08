@@ -67,14 +67,14 @@ export default function Carousel() {
 
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src={`${process.env.PUBLIC_URL}/img/c1.png`} className="d-block w-100" alt="..." />
+                        <img src={`${process.env.PUBLIC_URL}/img/swipe.png`} className="d-block w-100" alt="..." />
                     </div>
                     <div className="carousel-item">
-                        <img src={`${process.env.PUBLIC_URL}/img/c2.png`} className="d-block w-100" alt="..." />
+                        <img src={`${process.env.PUBLIC_URL}/img/sofaclean.png`} className="d-block w-100" alt="..." />
                         
                     </div>
                     <div className="carousel-item">
-                        <img src={`${process.env.PUBLIC_URL}/img/c3.png`} className="d-block w-100" alt="..." />
+                        <img src={`${process.env.PUBLIC_URL}/img/floor.png`} className="d-block w-100" alt="..." />
                         
                     </div>
                 </div>
