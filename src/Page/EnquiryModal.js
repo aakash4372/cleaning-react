@@ -5,9 +5,9 @@ import axios from "axios";
 const EnquiryModal = ({ show, handleClose }) => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "", // Added email field
-    type: "",
     phone: "",
+    email: "",
+    type: "",
     location: "",
   });
 
@@ -20,10 +20,10 @@ const EnquiryModal = ({ show, handleClose }) => {
     try {
       const response = await axios.post("http://localhost:5000/send-email", formData);
       alert(response.data.message);
-      setFormData({ name: "", email: "", type: "", phone: "", location: "" });
+      setFormData({ name: "", phone: "", email: "", type: "", location: "" });
       handleClose();
     } catch (error) {
-      alert("Error sending email. Try again.");
+      alert("Error sending enquiry. Try again.");
       console.log(error);
     }
   };
@@ -48,6 +48,18 @@ const EnquiryModal = ({ show, handleClose }) => {
           </Form.Group>
 
           <Form.Group className="mb-3">
+            <Form.Label>Phone</Form.Label>
+            <Form.Control
+              type="tel"
+              name="phone"
+              placeholder="Enter your phone number"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3">
             <Form.Label>Email</Form.Label>
             <Form.Control
               type="email"
@@ -66,18 +78,6 @@ const EnquiryModal = ({ show, handleClose }) => {
               name="type"
               placeholder="Enter type"
               value={formData.type}
-              onChange={handleChange}
-              required
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3">
-            <Form.Label>Phone</Form.Label>
-            <Form.Control
-              type="tel"
-              name="phone"
-              placeholder="Enter your phone number"
-              value={formData.phone}
               onChange={handleChange}
               required
             />
